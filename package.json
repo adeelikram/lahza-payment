@@ -1,0 +1,24 @@
+{
+  "name": "lahza-payment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/lahza.js",
+  "scripts": {
+    "minify": "npx uglifyjs -c -m -o dist/lahza.js -- dist/lahza.js && npx uglifyjs -c -m -o dist/js/core.js -- dist/js/core.js && npx uglifyjs -c -m -o dist/js/scripted.js -- dist/js/scripted.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc && npx copyfiles -u 1 src/assets/** src/styles/** src/content.html dist && npm run minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "jsmin": "^1.0.1",
+    "typescript": "^4.4.3",
+    "uglify-js": "^3.14.2"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "bootstrap": "^5.1.1"
+  }
+}
